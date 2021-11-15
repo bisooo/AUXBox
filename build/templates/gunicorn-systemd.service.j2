@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn server for {{auxbox.remote.site}}
+
+[Service]
+Restart=on-failure
+User={{auxbox.remote.user}}
+WorkingDirectory={{auxbox_home_dir}}
+
+ExecStart=gunicorn \
+    --bind unix:/tmp/{{auxbox.remote.site}}.socket \
+    auxbox.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

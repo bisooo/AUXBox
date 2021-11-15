@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} INVITES {% endblock %}
+
+{% block body %}
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+ <main role="main" class="inner cover">
+     <h1 class="cover-heading text-center font-weight-bold txt-6lack"><strong> " INVITATIONS " </strong></h1>
+     <br><br>
+    {% if warning %}
+    <p class="text-center text-danger"><strong> {{ warning }} </strong></p>
+    {% endif %}
+     {% if invitations %}
+     {% for i in invitations %}
+     <a href="{% url 'view_event' i.event_id %}" method="POST" type="button" class="btn btn-info txt-6lack"> EVENT PAGE </a>
+     &nbsp;&nbsp;&nbsp;
+     <h3 class="card-title txt-6lack" style="display:inline"><strong>  " {{i.from_user.first_name }} "  </strong></h3>
+     <h4 class="card-title txt-6lack" style="display:inline"><small> INVITED YOU TO  </small></h4>
+     <h3 class="card-title txt-6lack" style="display:inline"><strong>  " {{i.event.name}} " </strong></h3>
+     &nbsp;&nbsp;&nbsp;&nbsp;
+     <h3 class="card-title font-weight-bold txt-6lack" style="display:inline"><strong> , WHATCHU THINK ? </strong></h3>
+     &nbsp;
+     <a href="{% url 'invitation_response' event_id=i.event_id from_user_id=i.from_user_id to_user_id=i.to_user_id response=1 %}" method="POST" type="button" class="btn btn-success btn-lg txt-6lack"> YEAH </a>
+     &nbsp;&nbsp;
+     <a href="{% url 'invitation_response' event_id=i.event_id from_user_id=i.from_user_id to_user_id=i.to_user_id response=0 %}" method="POST" type="button" class="btn btn-danger btn-sm txt-6lack"> NAH </a>
+     <hr />
+     {% endfor %}
+     {% endif %}
+ </main>
+</div>
+
+{% endblock %}

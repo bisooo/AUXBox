@@ -1,0 +1,17 @@
+image: python:3.8
+
+before_script:
+  - python --version
+
+stages:
+  - test
+  #   add checkout stage
+  #   add deploy stage later
+
+unit_tests:  
+  stage: test
+  script: 
+    - pip install -r requirements.txt
+    - python manage.py test
+    
+  

@@ -1,0 +1,23 @@
+auxbox:
+  package:
+    src: "auxbox-version-1.0.zip"
+  remote:
+    user: "markester"
+    site: "foxbyte.studio"
+  settings:
+    secret:
+      key: "xo%t-*n-od+%)tdjybll*gz33n5)8^yq@a(3g30kpo&!q&*^x2"
+    debug:
+      bool: "False"
+    db:
+      engine: "django.db.backends.postgresql"
+      host: "swinpro.fit.cvut.cz"
+      user: "awadmark"
+      pass: "F9XrwWr6U"
+      name: "auxbox_project_db"
+      port: 5432
+    spotify:
+      client:
+        id: "134ffce4cac84f059ed12800d513be71"
+        secret: "6068e002a758455e940eb019a54711b7" 
+      redirect_uri: "http://foxbyte.studio/"

@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name {{auxbox.remote.site}};
+
+    location /static {
+        alias {{auxbox_home_dir}}/static;
+    }
+
+    location / {
+        proxy_pass http://unix:/tmp/{{auxbox.remote.site}}.socket;
+        proxy_set_header Host $host;
+    	proxy_set_header X-Forwarded-Host $server_name;	
+    }
+}

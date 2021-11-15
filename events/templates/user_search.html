@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+{% endblock %}
+{% block title %}INVITE FRIENDS{% endblock %}
+
+{% block body %}
+
+<h2 class="text-center txt-6lack">INVITE TO </h2>
+<br>
+<h1 class="text-center txt-6lack"><strong> " {{ event.name }} " </strong></h1>
+<br><br>
+<form class="search" action="{% url 'user_search' event.id %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11">
+                <input class="form-control form-control-lg text-center" type="text" name="search" placeholder="SEARCH BY NAME">
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-outline-info txt-6lack" type="submit">FIND</button>
+            </div>
+        </div>
+    </div>
+</form>
+<br><br>
+<div class="container">
+    {% if warning %}
+    <p class="text-center text-danger"><strong> {{ warning }} </strong></p>
+    {% endif %}
+    {% if users == None %}
+    <p class="text-center text-success"><strong> SEARCH BY NAME / SPOTIFY USERNAME / EMAIL </strong></p>
+    {% elif users %}
+    <div class="row">
+        {% for u in users %}
+            {% if user == u.requester %}
+            <div class="col-md-3 my-2 txt-6lack"> <strong>{{ u.receiver.first_name }} {{ u.receiver.last_name }}
+                <a href="{% url 'add_friend' event.id u.receiver.id %}" class="btn btn-success txt-6lack" methods="POST"> INVITE </a>
+            </strong></div>
+            {% else %}
+            <div class="col-md-3 my-2 txt-6lack"> <strong>{{ u.requester.first_name }} {{ u.requester.last_name }}
+                <a href="{% url 'add_friend' event.id u.requester.id %}" class="btn btn-success txt-6lack" methods="POST"> INVITE </a>
+            </strong></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-center text-danger"><strong>! NO RESULTS !</strong></p>
+    {% endif %}
+</div>
+<br><br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <a href="{% url 'view_event' event.id %}" methods="POST" class="btn btn-primary btn-lg txt-6lack"><strong> DONE </strong></a>
+    </div>
+</div>
+<br><br><br><br>
+
+{% endblock %}

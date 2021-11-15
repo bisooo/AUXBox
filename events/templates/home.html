@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} AUXBOX {% endblock %}
+
+{% block body %}
+
+<div class="card-deck m-md-1" xmlns="http://www.w3.org/1999/html">
+    {% for e in events %}
+    <div class="card text-center seafoam2 m-2">
+        <img class="card-img-bottom " src="{% static 'img/fssl.jpg' %}" alt="Card image" style="width:100%">
+        <div class="card-body txt-6lack">
+            <h2 class="card-title text-center seafoam2 text-uppercase"><small><strong>" {{ e.name }} " </small></strong></h2>
+        </div>
+        <div class="card-body seafoam2">
+            <a href="{% url 'view_event' e.id %}" class="btn btn-primary stretched-link txt-6lack btn-lg">VIEW EVENT</a>
+        </div>
+        <div class="card-body seafoam2 txt-6lack">
+            <h3 class="card-text font-weight-light text-left">{{ e.spotify_genre }}</h3>
+        </div>
+        <div class="card-body seafoam2 txt-6lack">
+            <h4 class="card-text font-italic text-left">  @ {{ e.location }} </h4>
+            <h4 class="card-text font-italic text-left"> ON {{ e.date }} </h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

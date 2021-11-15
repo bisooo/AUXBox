@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+{% endblock %}
+{% block title %} EVENT INFO {% endblock %}
+
+{% block body %}
+
+<div class="container txt-6lack">
+    <div class="row">
+        <div class="col-6 text-left txt-6lack">
+            <h1 class="txt-6lack"> {{ event.name }} </h1>
+            <h2 class="txt-6lack"> {{ event.spotify_genre }} </h2>
+            <h3 class="txt-6lack"> {{ event.description }} </h3>
+            <p class="font-weight-bold"><strong> @ {{ event.location }} </strong></p>
+            <p class="font-italic"> <strong> ON {{ event.date }} </strong></p>
+            <a href="{% url 'user_search' event.id %}" class="btn btn-primary txt-6lack btn-lg">INVITE FRIENDS</a>
+        </div>
+        <div class="col-6 text-right">
+            <h2 class="txt-6lack">Joiners:</h2>
+            {% for p in participation %}
+            <p > Name: {{ p.user.first_name }} {{ p.user.last_name }} </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

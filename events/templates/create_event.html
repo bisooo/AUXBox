@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} CREATE AN EVENT {% endblock %}
+
+{% block body %}
+
+<form action="{% url 'new_event' %}" method="post">
+    <div class="container">
+        {% csrf_token %}
+        <div class="form-row text-center">
+            <div class="form-group txt-6lack col-md-6 mb-0">
+                <strong>
+                    {{ form.title | as_crispy_field }}
+                </strong>
+            </div>
+            <div class="form-group txt-6lack col-md-6 mb-0">
+                <strong>
+                    {{ form.spotify_genre | as_crispy_field }}
+                </strong>
+            </div>
+        </div>
+        <div class="form-row text-center">
+            <div class="form-group txt-6lack col-md-6 mb-0">
+                <strong>
+                    {{ form.location | as_crispy_field }}
+                </strong>
+            </div>
+            <div class="form-group txt-6lack col-md-6 mb-0">
+                <strong>
+                    {{ form.time | as_crispy_field }}
+                </strong>
+            </div>
+            <div class="form-group txt-6lack col-md-6">
+                <strong>
+                    {{ form.date | as_crispy_field }}
+                </strong>
+            </div>
+            <div class="form-group txt-6lack col-md-6">
+                <strong>
+                {{ form.min_price | as_crispy_field }}
+                </strong>
+            </div>
+            <div class="form-group txt-6lack text-center col-md-12 mb-0">
+                <strong>
+                {{ form.description | as_crispy_field }}
+                </strong>
+            </div>
+        </div>
+    </div>
+    <div class="text-center txt-6lack">
+        <input type="submit" class="btn btn-primary btn-lg col-md-2 txt-6lack" value="CREATE">
+    </div>
+</form>
+
+
+{% endblock %}

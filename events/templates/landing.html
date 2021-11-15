@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
+    <link> {% block link %} {% endblock %} </link>
+     <!-- JQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- BOOTSTRAP JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<nav class="site-header sticky-top py-1 seafoam">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+          <a class="navbar-brand font-weight-bold txt-black" href="{% url 'home_page' %}"><strong> " AUXBOX " ™ </strong></a>
+
+        <a class="navbar d-md-inline-block font-weight-bold txt-black" href="{%  url 'landing' %}">SIGN IN</a>
+        <a class="navbar d-md-inline-block font-weight-bold txt-black" href="{%  url 'landing' %}">SIGN UP</a>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+            <label class="custom-control-label font-weight-bold txt-black" for="darkSwitch"> ☾ </label>
+        </div>
+        <script src="{% static 'js/dark-mode-switch.min.js' %}"></script>
+      </div>
+</nav>
+{% block body %}
+{% endblock %}
+<footer class="mastfoot txt-6lack mx-auto">
+    <div class="inner text-center">
+        <strong><p>FOR MORE INFO <a href="{% url 'about' %}"> ABOUT </a> AUXBOX © 2020. </p></strong>
+    </div>
+</footer>
+</body>
+</html>

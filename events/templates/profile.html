@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} PROFILE {% endblock %}
+
+{% block body %}
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+ <main role="main" class="inner cover">
+        <h1 class="cover-heading font-weight-bold text-center txt-6lack"><strong> " PROFILE " </strong></h1>
+        <br><br>
+        <h3 class="card-title font-weight-bold text-center txt-6lack"><strong> - FIRST NAME -  </strong></h3>
+        <h4 class="text-center text-uppercase txt-6lack"><small> {{ user.first_name }}  </small></h4>
+        {% if user.last_name %}
+        <h3 class="card-title font-weight-bold text-center txt-6lack"><strong> - LAST NAME - </strong></h3>
+        <h4 class="text-center text-uppercase txt-6lack"><small> {{ user.last_name }}  </small></h4>
+        {% endif %}
+        <br>
+        <h3 class="card-title font-weight-bold text-center txt-6lack"><strong> - USERNAME - </strong></h3>
+        <h4 class="text-center text-uppercase txt-6lack"><small> {{ user.username }}  </small></h4>
+        <br>
+        <h3 class="card-title font-weight-bold text-center txt-6lack"><strong> - EMAIL - </strong></h3>
+        <h4 class="text-center text-uppercase txt-6lack"><small> {{ user.email }}  </small></h4> </main>
+        <br>
+</div>
+
+{% endblock %}

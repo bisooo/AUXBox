@@ -1,0 +1,88 @@
+ACTORS:
+-Host
+  Creates events , chooses songs from requested songs.
+-Participant
+  Joins events ,up-votes and down-votes tracks or requests a song prior to the event in exchange for money.
+-Unregistered User
+  An anonymous user who has not registered yet.
+-Unauthenticated User
+  A user who already registered but not logged in yet.
+-Admin
+  The administrators.
+-Time
+----------------------------------------------------------------------------------------
+Participant Use Cases:
+
+1) List DJ and his Playlist(s)
+    Participants can see the songs in DJ's playlist if it is available.
+
+2) Voting Songs
+    Participants up-vote or down-vote songs during an event to be possibly mixed with DJ's
+    playlist.
+
+3) Request song
+   Participants make song requests to the host. They have an option to pay more than mini-
+   mum amount to increase chances.
+
+4) List Events
+    Participants can see the  list of events created by Hosts.
+    
+5) Invite Friends To an Event
+   Participants can list their friends and invite any of them to an event if they are not already joined.
+
+6)List Friends
+  Participants can see their list of friends possibly for inviting them to an event.
+ 
+7) Invite Friends To The Event
+   Participants can invite their friends to the event which they joined.
+
+8) List Participants
+   Participants are able to see the list of other participants who joined their event.   
+     
+-----------------------------------------------------------------------------------------
+Host Use Cases:
+
+1) Upload Playlist(s)
+    Hosts form and upload playlists to the public app platform.
+
+2) List Song Requests
+    Hosts list the song requests made by the users.
+
+3) Accept Song Requests
+    Hosts have the ability to accept song requests in exchange for money.
+
+4) Cancel Event
+    Hosts can cancel the event they created at any given time.
+
+5) List Participants
+   Hosts are able to see the list of participants who joined their event.
+
+6) List Friends
+   Hosts can see the list of their friends.
+7) Invite Friends To The Event
+   Hosts can invite their friends to their event just like the participants.
+-----------------------------------------------------------------------------------------  
+Unregistered User Use Cases
+1) Register
+ Unregistered Users can reister to the app by using their Spotfy credentials.
+-----------------------------------------------------------------------------------------
+Unauthenticated User Use Cases 
+1) Login
+ Unauthenticated Users can directly login if they are already registered.
+-----------------------------------------------------------------------------------------
+User Use Cases
+1)Join Events
+    User joins the events and has the ability to upvote songs.
+ 
+2)Create Event
+    Hosts create event and make it public for all app users.
+ 
+3)List Events
+  User sees list of events created by Hosts.
+
+4)Logout
+  Users can logout anytime they want.
+
+5)Edit Account
+  Users can edit their account information.
+

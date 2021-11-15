@@ -1,0 +1,28 @@
+[data-theme="dark"] .txt-black {
+  background-color: #1C1C1E !important;
+  color: #36d75c !important;
+}
+[data-theme="dark"] .txt-black2 {
+  background-color: #1C1C1E !important;
+  color: #0A84FF !important;
+}
+[data-theme="dark"] .text-white {
+  background-color: #1C1C1E !important;
+  color: #007bff !important;
+}
+[data-theme="dark"] .seafoam {
+  background-color: #1C1C1E !important;
+}
+[data-theme="dark"] .seafoam2 {
+  background-color: #3A3A3C !important;
+}
+
+.site-header a {
+  color: #000000 !important;
+  transition: ease-in-out color .15s !important;
+}
+.site-header a:hover {
+  color: #75009b !important;
+  text-decoration: none !important;
+}
+
