@@ -1,4 +1,5 @@
-# Description
+# " AUXBOX "
+
 AUXBox is a student created application that combines the classic crowd pleasing aspects of the Jukebox with the casualness of handing your friend the AUX cord of your cars stereo. Through the application the Hosts have access to a range of users to whom they can create and promote their events to. The users can then filter these events by genre, location, etc. join and invite their friends to them ; The aim of this project is to allow the users attending an event to influence the music being played. 
 
 The system keeps track of the authorised Users & Hosts that have registered to connect their Spotify accounts through the application. It also keeps record of all the events created by Hosts and their different attributes such as location, time, date, description and genre. The DJs can view the events they are playing at and through the Spotify API link their event playlists. It also keeps track of the users events' comments and their upvotes of songs for an event playlist. 
